@@ -5,14 +5,14 @@
     <div class='card-body'>
         <div class="row">
             <div>Filter by:</div>
-            <div><input type='text'/></div>
+            <div><input type='text' ([ngModel])='filterText'/></div>
         </div>
         <div class="row">
-                <div>Filtered by:</div>
+                <div>Filtered by: {{filterText}}</div>
             </div>
         </div>
         <div>
-          <table class='table' *ngIf='product && product.length'>
+          <table class='table' *ngIf='products && products.length'>
            <thead>
              <tr>
                <th>
@@ -29,7 +29,10 @@
            </thead>
            <tbody>
              <tr *ngFor='let product of products'>
-               <td><img src='{{product.imageUrl}}'/></td>
+               <td><img src='{{product.imageUrl}}'
+                [style.width.px]='imageWidth'
+                [style.width.margin]='imageMargin'
+                /></td>
                <td>{{product.productName}}</td>
                <td>{{product.productCode}}</td>
                <td>{{product.productCode}}</td>
