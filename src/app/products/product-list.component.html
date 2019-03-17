@@ -5,7 +5,7 @@
     <div class='card-body'>
         <div class="row">
             <div>Filter by:</div>
-            <div><input type='text' ([ngModel])='filterText'/></div>
+            <div><input type='text' ([ngModel])='filterText' /></div>
         </div>
         <div class="row">
                 <div>Filtered by: {{filterText}}</div>
@@ -15,7 +15,7 @@
           <table class='table' *ngIf='products && products.length'>
            <thead>
              <tr>
-               <th>
+               <th *ngIf='showImage'>
                  <button >
                     Image
                  </button>
